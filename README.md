@@ -1,16 +1,16 @@
-# uws-cli
+# UWS-cli
 Universal WiFi Switch - CLI
 
-This small project is to check and control wifi on ADSL/router boxes via a Command Line Interface.  
+This small project is to check and control WiFi on ADSL/router boxes via a Command Line Interface.  
 It is an implemantation of my other project [MOPPA](https://github.com/nogegon/moppa) in terms of software design.  
 
 ## Installation 
 You need a working Python3 environment.  
-In addition to standard libraries, you need to install :
-  - __Netifaces__ available [here] (https://pypi.org/project/netifaces/) 
-  - Requests available [here] (https://2.python-requests.org/en/master/) 
+In addition to standard libraries provided with your default Python3 installation, you need to install :
+  - __Netifaces__ available [here](https://pypi.org/project/netifaces/) 
+  - __Requests__ available [here](https://2.python-requests.org/en/master/) 
   
-A computer connected to the same LAN as the Wifi Box you wish to control.  
+A computer (or a device able to execute Python3) connected to the same LAN as the Wifi Box you wish to control.  
 
 ## Usage
 First, you need to identify the active routeur by typing the followig command:  
@@ -24,13 +24,15 @@ Once you have the ID, you can perform different kind of operations :
   - Turn Wifi On (__-a turnwifion__)
   - Get the firmware version (__-a getfirmware__)
   - Check WiFi status (__-a checkwifi__)
-  
-Please note that you have to provide also : 
-  - The ID of the router (__-ID ID__) 
-  - The login (__-l login__) [But not always, the Bouygues Telecom BBOX doesn't need it]
+ 
+Please note that you have to provide the ID of the router (__-ID ID__)  
+
+Expected, but optional depending on your router model/configuration:  
+  - The login (__-l login__) 
   - The password (__-p password__)
 
-The final command will be something like :  
+
+The final command will look like this:  
 __python3 uws_cli.py -a checkwifi -l login -p password -id ID__
 
 Finally, you can get information about the command line parameters by using :  
