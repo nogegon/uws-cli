@@ -191,8 +191,7 @@ my_ip = get_my_ip()
 logging.debug('My IP is : ' + my_ip)
 
 #Getting the IP of the gateway
-#my_gw_ip = get_my_gw_ip()
-my_gw_ip = '192.168.1.1'
+my_gw_ip = get_my_gw_ip()
 logging.debug('My Gateway IP is : ' + my_gw_ip)
 
 
