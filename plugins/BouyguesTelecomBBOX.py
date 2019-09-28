@@ -14,14 +14,20 @@ class BouyguesTelecomBBOX(object):
     
     # Identifies (or not) the Bouygues Telecom BBOX ADSL router
     def identify(self, session):
+        logging.debug(self.long_ID + ':IDENTIFY:Started')
         try:
             socket.gethostbyname(self.bbox_url)
         except:
-            logging.debug(self.long_ID + ' not identified')
+            logging.debug(self.long_ID + ':IDENTIFY:Not identified')
             return False
-        logging.debug(self.long_ID + ' identified')
-        logging.debug('ID of the router is : ' + self.ID)
+        logging.debug(self.long_ID + ':IDENTIFY:Identified !')
+        #logging.debug('ID of the router is : ' + self.ID)
         return True
+
+    # Indicates if this router needs parameters to change WiFi state        
+    def need_param(self):
+        logging.debug(self.long_ID + ':NEED_PARAM: False')
+        return False
 
     # Login function
     def login(self,session):
